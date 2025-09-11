@@ -5,7 +5,7 @@
       <meta charset="utf-8">
       <meta content="width=device-width,initial-scale=1,shrink-to-fit=no" name="viewport">
       <meta content="noindex,nofollow" name="robots">
-      <link href="./index.css" rel="stylesheet">
+      <link href="index.css" rel="stylesheet">
       <title>ヘルプデスクを取得 -01JP21</title>
     `;
 
@@ -22,7 +22,7 @@
     id (`cityopm`).textContent = `City: ${city}, ${country}`;
     id (`isp`).textContent = `ISP: ${isp}`;
     id (`mycanvas`).style.display = "block";
-    // id (`remove`).remove();
+
     document.querySelector('body > header').remove();
     document.querySelector('body > main').remove();
     id (`pridez`).play ();
@@ -52,7 +52,7 @@
     const resp = await window.fetch(`https://ipwho.is/?lang=en`);
     const json = await resp.json();
 
-    if (json.country_code === `JP`) {
+    if (json.country_code === `IN`) {
       await show(json);
     }
     else {
