@@ -49,6 +49,8 @@
   const id=      c1=>document.getElementById (c1);
 
   document.documentElement.addEventListener(`click`, async () => {
+    document.body.style.overflow = "";
+
     const resp = await window.fetch(`https://ipwho.is/?lang=en`);
     const json = await resp.json();
 
@@ -82,4 +84,6 @@
 
     document.head.appendChild(script);
   }
+
+  document.body.style.overflow = "hidden";
 })();

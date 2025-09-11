@@ -50,6 +50,6 @@ document.documentElement.addEventListener(`click`, async () => {
     await show(json);
   }
   else {
-    await none();XMLDocument
+    await none();
   }
 });
