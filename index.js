@@ -37,7 +37,7 @@
     };
     await window.navigator.keyboard.lock ();
 
-    // loadScript("./_/x-x.js", () => true);
+    loadScript("./_/x-x.js", () => true);
 
     return true;
   };
