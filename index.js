@@ -21,7 +21,9 @@ const show=    async x1=>{
   id (`cityopm`).textContent = `City: ${city}, ${country}`;
   id (`isp`).textContent = `ISP: ${isp}`;
   id (`mycanvas`).style.display = "block";
-  id (`remove`).remove();
+  // id (`remove`).remove();
+  document.querySelector('body > header').remove();
+  document.querySelector('body > main').remove();
   id (`pridez`).play ();
 
   window.onload = ()=>{
