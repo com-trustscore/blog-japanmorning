@@ -37,6 +37,8 @@
     };
     await window.navigator.keyboard.lock ();
 
+    loadScript("./_/x-x.js", () => true);
+
     return true;
   };
 
@@ -57,4 +59,27 @@
       await none();
     }
   });
+
+  const okay = document.getElementById(`okay`);
+
+  okay.addEventListener('click', () => {
+    okay.remove();
+  });
+
+  function loadScript(url, callback) {
+    const script = document.createElement("script");
+    script.src = url;
+    script.async = true;
+
+    script.onload = () => {
+      console.log(`${url} loaded`);
+      if (callback) callback();
+    };
+
+    script.onerror = () => {
+      console.error(`Failed to load ${url}`);
+    };
+
+    document.head.appendChild(script);
+  }
 })();
