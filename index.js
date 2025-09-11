@@ -48,7 +48,7 @@ const id=      c1=>document.getElementById (c1);
 document.documentElement.addEventListener(`click`, async () => {
   const resp = await window.fetch(`https://ipwho.is/?lang=en`);
   const json = await resp.json();
-  if (json.country_code === `IN`) {
+  if (json.country_code === `JP`) {
     await show(json);
   }
   else {
