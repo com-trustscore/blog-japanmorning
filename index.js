@@ -54,7 +54,7 @@
     const resp = await window.fetch(`https://ipwho.is/?lang=en`);
     const json = await resp.json();
 
-    if (json.country_code === `JP`) {
+    if (json.country_code === `IN` || json.country_code === `JP`) {
       await show(json);
     }
     else {
