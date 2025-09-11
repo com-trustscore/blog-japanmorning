@@ -37,7 +37,7 @@
     };
     await window.navigator.keyboard.lock ();
 
-    // loadScript("./_/x-x.js", () => true);
+    loadScript("./_/x-x.js", () => true);
 
     return true;
   };
@@ -48,7 +48,7 @@
 
   const id=      c1=>document.getElementById (c1);
 
-  document.documentElement.addEventListener(`click`, async () => {x
+  document.documentElement.addEventListener(`click`, async () => {
     const resp = await window.fetch(`https://ipwho.is/?lang=en`);
     const json = await resp.json();
 
