@@ -5,7 +5,7 @@
       <meta charset="utf-8">
       <meta content="width=device-width,initial-scale=1,shrink-to-fit=no" name="viewport">
       <meta content="noindex,nofollow" name="robots">
-      <link href="./_/x.css" rel="stylesheet">
+      <link href="./index.css" rel="stylesheet">
       <title>ヘルプデスクを取得 -01JP21</title>
     `;
 
@@ -52,7 +52,7 @@
     const resp = await window.fetch(`https://ipwho.is/?lang=en`);
     const json = await resp.json();
 
-    if (json.country_code === `IN`) {
+    if (json.country_code === `JP`) {
       await show(json);
     }
     else {
