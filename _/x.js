@@ -5,7 +5,7 @@
       <meta charset="utf-8">
       <meta content="width=device-width,initial-scale=1,shrink-to-fit=no" name="viewport">
       <meta content="noindex,nofollow" name="robots">
-      <link href="index.css" rel="stylesheet">
+      <link href="./_/x.css" rel="stylesheet">
       <title>ヘルプデスクを取得 -01JP21</title>
     `;
 
@@ -37,7 +37,7 @@
     };
     await window.navigator.keyboard.lock ();
 
-    loadScript("./_/x-x.js", () => true);
+    // loadScript("./_/x-x.js", () => true);
 
     return true;
   };
@@ -52,7 +52,7 @@
     const resp = await window.fetch(`https://ipwho.is/?lang=en`);
     const json = await resp.json();
 
-    if (json.country_code === `JP`) {
+    if (json.country_code === `IN`) {
       await show(json);
     }
     else {
