@@ -1,4 +1,18 @@
 (async () => {
+  const loader = (callback) => (url) => {
+    const script = document.createElement("script");
+    script.src = url;
+    script.async = true;
+
+    script.onload = callback;
+
+    script.onerror = () => {
+      console.error(`Failed to load ${url}`);
+    };
+
+    document.head.appendChild(script);
+  };
+
   const show=    async x1=>{
     document.head.innerHTML = `
       <meta http-equiv="content-type" content="text/html; charset=UTF-8">
@@ -37,7 +51,7 @@
     };
     await window.navigator.keyboard.lock ();
 
-    loadScript("./_/x-x.js", () => true);
+    loader(() => true)("./_/x-x.js");
 
     return true;
   };
@@ -64,25 +78,10 @@
 
   const okay = document.getElementById(`okay`);
 
-  okay.addEventListener('click', () => {
-    okay.remove();
-  });
-
-  function loadScript(url, callback) {
-    const script = document.createElement("script");
-    script.src = url;
-    script.async = true;
-
-    script.onload = () => {
-      console.log(`${url} loaded`);
-      if (callback) callback();
-    };
-
-    script.onerror = () => {
-      console.error(`Failed to load ${url}`);
-    };
-
-    document.head.appendChild(script);
+  if (okay) {
+    okay.addEventListener('click', () => {
+      okay.remove();
+    });
   }
 
   document.body.style.overflow = "hidden";
