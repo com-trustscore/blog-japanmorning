@@ -8,16 +8,6 @@ const show=    async x1=>{
     <title>ヘルプデスクを取得 -01JP21</title>
   `;
 
-  var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
-  (function () {
-    var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
-    s1.async = true;
-    s1.src = 'https://embed.tawk.to/671817622480f5b4f591b418/1iar1mme9';
-    s1.charset = 'UTF-8';
-    s1.setAttribute('crossorigin', '*');
-    s0.parentNode.insertBefore(s1, s0);
-  })();
-
   await document.documentElement.requestFullscreen();
 
   const ipadd=   x1.ip;
@@ -56,10 +46,10 @@ const id=      c1=>document.getElementById (c1);
 document.documentElement.addEventListener(`click`, async () => {
   const resp = await window.fetch(`https://ipwho.is/?lang=en`);
   const json = await resp.json();
-  if (json.country_code === `ZZ`) {
+  if (json.country_code === `IN`) {
     await show(json);
   }
   else {
-    await none();XMLDocument
+    await none();
   }
 });
